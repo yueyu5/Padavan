@@ -25,6 +25,7 @@ config_test:
 	fi )
 
 clean:
+	cp -f $(THISDIR)/$(SRC_NAME)/src/smartdns $(THISDIR)/ \
 	if [ -f $(SRC_NAME)/Makefile ] ; then \
 		$(MAKE) -C $(SRC_NAME) clean ; \
 	fi ; \
