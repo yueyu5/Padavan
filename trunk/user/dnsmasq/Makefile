@@ -32,7 +32,7 @@ config_test:
 	( if [ -f ./config_done ]; then \
 		echo "the same configuration"; \
 	else \
-		make configure && touch config_done; \
+		touch config_done; \
 	fi )
 clean:
 	#$(MAKE) -C $(SRC_NAME) clean
