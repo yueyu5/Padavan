@@ -35,8 +35,8 @@ config_test:
 		make configure && touch config_done; \
 	fi )
 clean:
-	$(MAKE) -C $(SRC_NAME) clean
-	rm -f dnsmasq
+	#$(MAKE) -C $(SRC_NAME) clean
+	#rm -f dnsmasq
 
 romfs:
 	cp $(SRC_NAME)/src/dnsmasq .
