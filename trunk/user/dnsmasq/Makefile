@@ -26,6 +26,7 @@ download_test:
 extra_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar xf $(SRC_NAME).tar.gz ; \
+		tree ./ ; \
 	fi )
 config_test:
 	( if [ -f ./config_done ]; then \
