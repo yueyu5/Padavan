@@ -16,7 +16,7 @@ ifneq ($(CONFIG_FIRMWARE_INCLUDE_IPSET),y)
 COPTS += -DNO_IPSET
 endif
 
-all: download_test extra_test
+all: download_test extra_test config_test
 	$(MAKE) -j$(HOST_NCPU) -C $(SRC_NAME) COPTS="$(COPTS)"
 
 download_test:
@@ -25,7 +25,13 @@ download_test:
 	fi )
 extra_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		tar zxf $(SRC_NAME).tar.gz ; \
+		tar xf $(SRC_NAME).tar.gz ; \
+	fi )
+config_test:
+	( if [ -f ./config_done ]; then \
+		echo "the same configuration"; \
+	else \
+		make configure && touch config_done; \
 	fi )
 clean:
 	$(MAKE) -C $(SRC_NAME) clean
