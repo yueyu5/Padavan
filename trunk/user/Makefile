@@ -107,11 +107,11 @@ dir_y							+= busybox
 dir_y							+= iptables
 dir_y							+= coremark
 ifneq ($(CONFIG_WITHOUT_KERNEL),y)
-#dir_$(CONFIG_FIRMWARE_INCLUDE_IPSET)			+= ipset
+dir_$(CONFIG_FIRMWARE_INCLUDE_IPSET)			+= ipset
 dir_y							+= accel-pptpd
 endif
 dir_y							+= ebtables
-#dir_y							+= iproute2
+dir_y							+= iproute2
 dir_y							+= wireless_tools
 dir_y							+= shared
 dir_$(STORAGE_ENABLED)					+= libdisk
@@ -127,7 +127,7 @@ dir_$(CONFIG_FIRMWARE_INCLUDE_SFE)			+= shortcut-fe
 dir_y							+= infosvr
 dir_y							+= inadyn
 dir_y							+= miniupnpd
-#dir_y							+= dnsmasq
+dir_y							+= dnsmasq
 dir_y							+= igmpproxy
 dir_y							+= udpxy
 dir_y							+= utils
@@ -140,13 +140,13 @@ dir_y							+= xl2tpd
 dir_$(CONFIG_FIRMWARE_INCLUDE_RPL2TP)			+= rp-l2tp
 dir_y							+= lldt
 dir_y							+= scripts
-#dir_$(CONFIG_FIRMWARE_INCLUDE_NGINX)			+= nginx
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= skipdbv2
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= lua51
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= ipt2socks
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)              += resolveip
+dir_$(CONFIG_FIRMWARE_INCLUDE_NGINX)			+= nginx
+dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= skipdbv2
+dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= lua51
+dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)		+= ipt2socks
+dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)              += resolveip
 dir_$(CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME)      	+= adguardhome
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)	        += dns2tcp
+dir_$(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS)	        += dns2tcp
 
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS),y)
 dir_$(CONFIG_FIRMWARE_INCLUDE_V2RAY)	        += v2ray
@@ -193,7 +193,7 @@ dir_$(CONFIG_FIRMWARE_INCLUDE_IPERF3)			+= iperf3
 dir_$(CONFIG_FIRMWARE_INCLUDE_MINIEAP)			+= minieap
 dir_$(CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT)		+= njit-client
 dir_$(CONFIG_FIRMWARE_INCLUDE_MENTOHUST)		+= mentohust
-#dir_$(CONFIG_FIRMWARE_INCLUDE_SMARTDNS)			+= smartdns
+dir_$(CONFIG_FIRMWARE_INCLUDE_SMARTDNS)			+= smartdns
 dir_$(CONFIG_FIRMWARE_INCLUDE_CADDY)			+= caddy
 dir_$(CONFIG_FIRMWARE_INCLUDE_xTUN) 			+= xTun
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_WING),y)
