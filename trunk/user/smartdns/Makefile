@@ -11,7 +11,7 @@ download_test:
 	( if [ ! -f $(SRC_NAME).tar.gz ]; then \
 		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_NAME).tar.gz $(SRC_URL); \
 	fi )
-	ls
+	tree -h $(SRC_NAME)
 
 extra_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
@@ -27,10 +27,9 @@ config_test:
 	fi )
 
 clean:
-	cp -f $(THISDIR)/$(SRC_NAME)/src/smartdns $(THISDIR)/ \
-	#if [ -f $(SRC_NAME)/Makefile ] ; then \
-	#	$(MAKE) -C $(SRC_NAME) clean ; \
-	#fi ; \
+	if [ -f $(SRC_NAME)/Makefile ] ; then \
+		$(MAKE) -C $(SRC_NAME) clean ; \
+	fi ; \
 	rm -f config_done
 
 romfs:
