@@ -11,7 +11,7 @@ all: extra_test config_test
 
 extra_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
-		git clone https://github.com/AdguardTeam/AdGuardHome;
+		git clone https://github.com/AdguardTeam/AdGuardHome; \
 	fi )
 
 config_test:
