@@ -10,7 +10,7 @@ sed -i '/filter-aaaa/d' /etc/storage/dnsmasq/dnsmasq.conf
 filter-aaaa
 EOF
 fi
-sed -i '/min-ttl/d' /etc/storage/dnsmasq/dnsmasq.conf
+sed -i '/min-cache-ttl/d' /etc/storage/dnsmasq/dnsmasq.conf
 cat >>/etc/storage/dnsmasq/dnsmasq.conf <<EOF
 min-cache-ttl=$min_ttl
 EOF
