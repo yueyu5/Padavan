@@ -325,7 +325,7 @@ start_dns_dhcpd(int is_ap_mode)
 
 	fprintf(fp, "user=%s\n"
 		    "resolv-file=%s\n"
-		    "no-poll\n"
+		    //"no-poll\n"
 		    "bogus-priv\n"
 		    "no-negcache\n"
 		    "clear-on-reload\n"
