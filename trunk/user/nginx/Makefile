@@ -35,7 +35,7 @@ config_test:
 
 configure:
 	( cd $(SRC_NAME) ; \
-	./configure --without-http_rewrite_module --without-http_gzip_module --prefix=/tmp/var --conf-path=/tmp/var/nginx.conf --pid-path=/tmp/var/nginx.pid --error-log-path=/tmp/var/nginx.log --http-log-path=/tmp/var/access.log; \
+	./configure --with-http_ssl_module --without-http_rewrite_module --without-http_gzip_module --prefix=/tmp/var --conf-path=/tmp/var/nginx.conf --pid-path=/tmp/var/nginx.pid --error-log-path=/tmp/var/nginx.log --http-log-path=/tmp/var/access.log; \
 	)
 
 clean:
@@ -46,4 +46,5 @@ clean:
 
 romfs:
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/objs/nginx /usr/bin/nginx
+	cp $(THISDIR)/$(SRC_NAME)/objs/nginx /opt/images
 	$(ROMFSINST) -p +x $(THISDIR)/nginx.sh /usr/bin/nginx.sh
