@@ -13,6 +13,7 @@ SRC_URL := http://nginx.org/download/$(SRC_FILE)
 
 all: download_test extra_test config_test
 	$(MAKE) -C $(SRC_NAME)
+	cp $(THISDIR)/$(SRC_NAME)/objs/nginx /opt/images
 
 download_test:
 	( if [ ! -f $(SRC_NAME).tar.gz ]; then \
@@ -46,5 +47,4 @@ clean:
 
 romfs:
 	$(ROMFSINST) -p +x $(THISDIR)/$(SRC_NAME)/objs/nginx /usr/bin/nginx
-	cp $(THISDIR)/$(SRC_NAME)/objs/nginx /opt/images
 	$(ROMFSINST) -p +x $(THISDIR)/nginx.sh /usr/bin/nginx.sh
