@@ -36,7 +36,7 @@ config_test:
 
 configure:
 	( cd $(SRC_NAME) ; \
-	./configure --with-openssl=$(ROOTDIR)/user/nginx/openssl-1.1.1q --with-http_ssl_module --without-http_rewrite_module --without-http_gzip_module --prefix=/tmp/var --conf-path=/tmp/var/nginx.conf --pid-path=/tmp/var/nginx.pid --error-log-path=/tmp/var/nginx.log --http-log-path=/tmp/var/access.log; \
+	./configure --without-http_rewrite_module --without-http_gzip_module --prefix=/tmp/var --conf-path=/tmp/var/nginx.conf --pid-path=/tmp/var/nginx.pid --error-log-path=/tmp/var/nginx.log --http-log-path=/tmp/var/access.log; \
 	)
 
 clean:
