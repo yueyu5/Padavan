@@ -18,13 +18,11 @@ all: download_test extra_test config_test
 download_test:
 	( if [ ! -f $(SRC_NAME).tar.gz ]; then \
 		wget -t5 --timeout=20 --no-check-certificate -O $(SRC_FILE) $(SRC_URL); \
-		wget -t5 --timeout=20 --no-check-certificate -O openssl-1.1.1q.tar.gz https://www.openssl.org/source/openssl-1.1.1q.tar.gz; \
 	fi )
 
 extra_test:
 	( if [ ! -d $(SRC_NAME) ]; then \
 		tar xf $(SRC_FILE); \
-		tar zxf openssl-1.1.1q.tar.gz; \
 		sed -i 's/if \/bin\/sh/if \(echo march \| grep march\) \|\| \/bin\/sh/' $(SRC_NAME)/auto/feature ; \
 		sed -i 's/if \[ -x/if \(echo march \| grep march\)\; then ngx_size=4; elif \[ -x/' $(SRC_NAME)/auto/types/sizeof ; \
 	fi )
